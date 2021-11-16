@@ -8,6 +8,7 @@ class Menu:public Menu_Backend
 private:
 	int Choice = 0;
 	int Privilege = 0;
+	char username[20];
 public : 
 	
 
@@ -105,12 +106,25 @@ public :
 		switch (Choice)
 		{
 		case 1:
+			
+			viewVector();
+			system("pause");
+			menu_User_Manager();
 			break;
 
 		case 2: 
+			addVector();
+			system("pause");
+			menu_User_Manager();
 			break;
 
 		case 3:
+			viewVector();
+			cout << "Enter username to update : " << endl;
+			cin >> username;
+			updateUser(username);
+			system("pause");
+			menu_User_Manager();
 			break;
 
 		case 4: 

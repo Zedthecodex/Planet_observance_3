@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <string>
-
+#include <iomanip>
 using namespace std;
 
 #ifndef USER_CPP
@@ -71,6 +71,26 @@ public:
 	void setRace(char race[])
 	{
 		memcpy(this->User_race, race, 15);
+	}
+
+	void getUser()
+	{
+		cout << "Please enter a username : ";
+		cin >> User_name;
+		cout << "Please enter a password :  ";
+		cin >> User_pass;
+		cout << "Please enter a role : ";
+		cin >> User_role;
+		cout << "Please enter a race : ";
+		cin >> User_race;
+
+	}
+	void displayUser()
+	{
+		int Dist = 25;
+		cout << "\t\t\t================================" << endl;
+		cout << setw(Dist) << "Username" << setw(Dist) << "Password" << setw(Dist) << "Role" << setw(Dist) << "Race" << endl;
+		cout << setw(Dist) << User_name << setw(Dist) << User_pass << setw(Dist) << User_role << setw(Dist) << User_race << endl;
 	}
 };
 

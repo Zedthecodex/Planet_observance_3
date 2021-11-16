@@ -54,14 +54,4 @@ int main()
 
 
 
-void saveVector(User& user)
-{
-	fstream fout;
-	
-	fout.open(("Accounts\\" + user.getUsername() + "_Acc.dat"), ios::out | ios::app | ios::binary);
-	//fout.open(("Accounts.dat"), ios::out | ios::app | ios::binary);
-	fout.write((char*)&user, sizeof(user));
-	fout.close();
-
-}
 
