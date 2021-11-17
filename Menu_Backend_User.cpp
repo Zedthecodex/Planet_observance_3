@@ -40,7 +40,7 @@ public :
 
 
 
-	void addVector()
+	void addVector() //needed refactoring with addition of parameters instead
 	{
 		system("cls");
 		cout << "\t\t\t==========Account Creation==========" << endl;
@@ -52,6 +52,7 @@ public :
 		cin >> role;
 		cout << "Race : " << endl;
 		cin >> race;
+	
 
 		User user(Username, Password, role, race);
 		fstream fout;
@@ -74,7 +75,7 @@ public :
 		User user;
 		ifstream fin;
 		fin.open((USER), ios::in | ios::binary);
-		while (fin.read((char*)&user, sizeof(User)))
+		while (fin.read((char*)&user, sizeof(User))) // One for reading and another for displaying
 		{
 			if (fin.eof())
 			{
