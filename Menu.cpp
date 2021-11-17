@@ -1,9 +1,10 @@
 #include <iostream>
 #include <vector>
-#include "Menu_Backend.cpp"
+#include "Menu_Backend_User.cpp"
+#include "Menu_Backend_Planets.cpp"
 using namespace std;
 
-class Menu:public Menu_Backend
+class Menu:public Menu_Backend_User, Menu_Backend_Planets
 {
 private:
 	int Choice = 0;
@@ -128,9 +129,21 @@ public :
 			break;
 
 		case 4: 
+			system("cls");
+			cout << "Please enter a username to search : " << endl;
+			cin >> username;
+			searchUser(username);
+			system("pause");
+			menu_User_Manager();
 			break;
 			
 		case 5:
+			viewVector();
+			cout << "Enter username to delete : " << endl;
+			cin >> username;
+			deleteUser(username);
+			system("pause");
+			menu_User_Manager();
 			break;
 
 		case 6 :
@@ -155,6 +168,35 @@ public :
 		cout << "\t\t\t 6).Go back " << endl;
 		cout << "\n\n\t\t\t===================================" << endl;
 		cin >> Choice;
+
+		switch (Choice)
+		{
+		case 1:
+			viewPlanets();
+			system("pause");
+			menu_Planets_Manager();
+			break;
+		case 2:
+			AddPlanet();
+			system("pause");
+			menu_Planets_Manager();
+			break;
+		case 3:
+			viewPlanets();
+			cout << "Please Enter a Planet's Name to update: " << endl;
+			cin >> name;
+			updatePlanet(name);
+			system("pause");
+			menu_Planets_Manager();
+			break;
+		case 4:
+			break;
+		case 5:
+			break;
+		case 6:
+			main_Menu_Admin();
+			break;
+		}
 	}
 
 

@@ -36,7 +36,10 @@
     <ClCompile Include="Menu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Menu_Backend.cpp">
+    <ClCompile Include="Menu_Backend_User.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu_Backend_Planets.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -92,6 +92,7 @@ public:
 		cout << setw(Dist) << "Username" << setw(Dist) << "Password" << setw(Dist) << "Role" << setw(Dist) << "Race" << endl;
 		cout << setw(Dist) << User_name << setw(Dist) << User_pass << setw(Dist) << User_role << setw(Dist) << User_race << endl;
 	}
+
 };
 
 

@@ -3,7 +3,7 @@
 using namespace std;
 
 const char USER[] = "Accounts_All\\Accounts.dat";
-class Menu_Backend:public User_auth
+class Menu_Backend_User:public User_auth
 {
 private : 
 	//User user;
@@ -93,7 +93,7 @@ public :
 		fio.open(USER, ios::in | ios::out | ios::binary);
 		if (!fio)
 		{
-			cerr << "File open failed";
+			cerr << "File failed to open";
 			exit(1);
 		}
 
@@ -114,7 +114,7 @@ public :
 		fio.open(("Accounts\\" + user.getUsername() + "_Acc.dat"), ios::in | ios::out | ios::binary);
 		if (!fio)
 		{
-			cerr << "File open failed";
+			cerr << "File failed to open";
 			exit(1);
 		}
 
@@ -131,6 +131,83 @@ public :
 			}
 		}
 		fio.close();
+	}
+
+
+	void searchUser(string name)
+	{
+		system("cls");
+		fstream fio;
+		User user;
+
+		fio.open(USER, ios::in | ios::out | ios::binary);
+		if (!fio)
+		{
+			cerr << "File open failed";
+			exit(1);
+		}
+
+		while (fio.read((char*)&user, sizeof(User)))
+		{
+			if (user.getUsername() == name)
+			{
+				user.displayUser();
+				break;
+			}
+		}
+	}
+
+	void deleteUser(string name)
+	{
+		system("cls");
+		ifstream fin;
+		ofstream fout;
+		User user;
+
+		fin.open(USER, ios::in | ios::binary);
+		if (!fout)
+		{
+			cerr << "File failed to open ";
+			exit(1);
+		}
+		fout.open("temp.dat", ios::out | ios::app | ios::binary);
+		fin.seekg(0, ios::beg);
+		while (fin.read((char*)&user, sizeof(User)))
+		{
+			if (user.getUsername() != name)
+			{
+				fout.write((char*)&user, sizeof(User));
+			}
+		}
+		fin.close();
+		fout.close();
+		if (remove(USER) != 0)
+		{
+			cout << "Failed to remove!" << endl;
+		}
+		
+		cout << "\t\t\t User has been deeleted" << endl;
+		RenameUser();
+	}
+
+	void RenameUser()
+	{
+		int removeStatus = 0;
+		if (remove(USER) != 0)
+		{
+			//cerr << "Failed to remove the file! " << endl;
+
+		}
+		removeStatus = rename("temp.dat", USER);
+		if (removeStatus == 0)
+		{
+			cout << "Deletion Succeeded" << endl;
+		}
+		else
+		{
+			cout << "Deletion Failed " << endl;
+		}
+
 	}
 
 	
