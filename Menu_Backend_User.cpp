@@ -1,8 +1,10 @@
+#pragma once
 #include <iostream>
 #include "User_Auth.cpp"
+#include "FileUtility.cpp"
 using namespace std;
 
-const char USER[] = "Accounts_All\\Accounts.dat";
+
 class Menu_Backend_User:public User_auth
 {
 private : 
@@ -44,27 +46,36 @@ public :
 	{
 		system("cls");
 		cout << "\t\t\t==========Account Creation==========" << endl;
-		cout << "Username : " << endl;
+		/*cout << "Username : " << endl;
 		cin >> Username;
 		cout << "Password : " << endl;
 		cin >> Password;
 		cout << "Role : " << endl;
 		cin >> role;
 		cout << "Race : " << endl;
-		cin >> race;
-	
+		cin >> race;*/
+		User user;
+		FileUtility fileutil;
+		user.getUser();
 
-		User user(Username, Password, role, race);
-		fstream fout;
+		fileutil.OpenDatatoFile(USER);
+		fileutil.WriteDataToFile_User(user);
+		fileutil.CloseDatatoFile();
 
-		fout.open(("Accounts\\" + user.getUsername() + "_Acc.dat"), ios::out | ios::app | ios::binary);
+		fileutil.OpenDatatoFile("Accounts\\" + user.getUsername() + "_Acc.dat");
+		fileutil.WriteDataToFile_User(user);
+		fileutil.CloseDatatoFile();
+		/*fstream fout;*/
+
+	/*	fout.open(("Accounts\\" + user.getUsername() + "_Acc.dat"), ios::out | ios::app | ios::binary);
 		
 		fout.write((char*)&user, sizeof(user));
 		fout.close();
 
 		fout.open(("Accounts_All\\Accounts.dat"), ios::out | ios::app | ios::binary);
 		fout.write((char*)&user, sizeof(user));
-		fout.close();
+		fout.close();*/
+
 
 	}
 
@@ -73,16 +84,22 @@ public :
 		system("cls");
 		cout << "\t\t\t==========Display User ==========" << endl;
 		User user;
-		ifstream fin;
-		fin.open((USER), ios::in | ios::binary);
-		while (fin.read((char*)&user, sizeof(User))) // One for reading and another for displaying
-		{
-			if (fin.eof())
-			{
-				break;
-			}
-			user.displayUser();
-		}
+		FileUtility FileIO;
+
+		FileIO.OpenDatafromFile(USER);
+		FileIO.ReadDataFromFile_User(user);
+		FileIO.CloseDataFromFile();
+		//User user;
+		//ifstream fin;
+		//fin.open((USER), ios::in | ios::binary);
+		//while (fin.read((char*)&user, sizeof(User))) // One for reading and another for displaying
+		//{
+		//	if (fin.eof())
+		//	{
+		//		break;
+		//	}
+		//	user.displayUser();
+		//}
 	}
 
 	void updateUser(string name)

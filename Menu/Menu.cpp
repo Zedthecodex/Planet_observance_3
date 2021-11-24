@@ -20,28 +20,28 @@ public :
 		cout << "\n\n" << "\t\t\t1).Login " << endl;
 		cout << "\t\t\t2).Exit " << endl;
 		cout << "\n\n\t\t\t=========================" << endl;
-		//cin >> Choice;
-		//switch(Choice)
-		//{
-		//case 1: 
-		//	
-		//	Privilege = login_Menu_Back();  // This is used to check for admin or user privileges
-		//	//cout << "You are in!" << endl;
-		//	main_Menu(Privilege);
+		cin >> Choice;
+		switch(Choice)
+		{
+		case 1: 
+			
+			Privilege = login_Menu_Back();  // This is used to check for admin or user privileges
+			//cout << "You are in!" << endl;
+			main_Menu(Privilege);
 
-		//	break;
+			break;
 
-		//case 2:
-		//	cout << "Exiting....." << endl;
-		//	exit(0);
-		//	break;
+		case 2:
+			cout << "Exiting....." << endl;
+			exit(0);
+			break;
 
-		//default : 
-		//	system("cls");
-		//	cout << "Please choose between the choices give" << endl;
-		//	login_Menu();
-		//	break;
-		//}
+		default : 
+			system("cls");
+			cout << "Please choose between the choices give" << endl;
+			login_Menu();
+			break;
+		}
 
 	}
 
@@ -68,7 +68,7 @@ public :
 		cout << "\t\t\t 3).Modify Profile" << endl;
 		cout << "\t\t\t 4).Sign Out and Exit" << endl;
 		cout << "\n\n\t\t\t======================================" << endl;
-		/*cin >> Choice;
+		cin >> Choice;
 
 		switch (Choice)
 		{
@@ -87,7 +87,7 @@ public :
 		case 4 : 
 			
 			break;
-		}*/
+		}
 
 	}
 
@@ -102,7 +102,7 @@ public :
 		cout << "\t\t\t 5).Delete User" << endl;
 		cout << "\t\t\t 6).Go back " << endl;
 		cout << "\n\n\t\t\t===================================" << endl;
-		/*cin >> Choice;
+		cin >> Choice;
 
 		switch (Choice)
 		{
@@ -151,7 +151,7 @@ public :
 			main_Menu_Admin();
 			break;
 
-		}*/
+		}
 
 		
 	}
@@ -167,7 +167,7 @@ public :
 		cout << "\t\t\t 5).Delete Planet" << endl;
 		cout << "\t\t\t 6).Go back " << endl;
 		cout << "\n\n\t\t\t===================================" << endl;
-		/*cin >> Choice;
+		cin >> Choice;
 
 		switch (Choice)
 		{
@@ -196,7 +196,7 @@ public :
 		case 6:
 			main_Menu_Admin();
 			break;
-		}*/
+		}
 	}
 
 

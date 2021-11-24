@@ -1,3 +1,4 @@
+#pragma once
 #include "Galaxies.cpp"
 
 using namespace std;

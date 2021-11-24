@@ -141,11 +141,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="FileUtility.cpp" />
     <ClCompile Include="Galaxies.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Menu_Backend_Planets.cpp" />
     <ClCompile Include="Menu_Backend_User.cpp" />
+    <ClCompile Include="Menu_Front.cpp" />
     <ClCompile Include="Planets.cpp" />
     <ClCompile Include="Stations.cpp" />
     <ClCompile Include="User.cpp" />
