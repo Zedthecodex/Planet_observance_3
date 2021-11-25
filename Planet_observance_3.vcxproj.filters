@@ -42,10 +42,13 @@
     <ClCompile Include="Menu_Backend_Planets.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Menu_Front.cpp">
+    <ClCompile Include="Menu_Front_User.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FileUtility.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu_Front_Planets.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

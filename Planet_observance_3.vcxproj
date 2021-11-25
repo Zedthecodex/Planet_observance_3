@@ -147,7 +147,8 @@
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Menu_Backend_Planets.cpp" />
     <ClCompile Include="Menu_Backend_User.cpp" />
-    <ClCompile Include="Menu_Front.cpp" />
+    <ClCompile Include="Menu_Front_User.cpp" />
+    <ClCompile Include="Menu_Front_Planets.cpp" />
     <ClCompile Include="Planets.cpp" />
     <ClCompile Include="Stations.cpp" />
     <ClCompile Include="User.cpp" />

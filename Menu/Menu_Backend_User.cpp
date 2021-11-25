@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
-#include "../Planet_observance_3/Login/User_Auth.cpp"
-#include "../Planet_observance_3/File_Utility/FileUtility.cpp"
+#include "User_Auth.cpp"
+#include "FileUtility.cpp"
 using namespace std;
 
 

@@ -1,10 +1,14 @@
+#pragma once
 #include <iostream>
 #include <vector>
-#include "Menu_Backend_User.cpp"
-#include "Menu_Backend_Planets.cpp"
+#include "../Planet_observance_3/Menu/Menu_Backend_User.cpp"
+#include "../Planet_observance_3/Menu/Menu_Backend_Planets.cpp"
+#include "../Planet_observance_3/Menu/Menu_Front_User.cpp"
+#include "../Planet_observance_3/Menu/Menu_Front_Planets.cpp"
+
 using namespace std;
 
-class Menu:public Menu_Backend_User, Menu_Backend_Planets
+class Menu:public Menu_User, Menu_Planets
 {
 private:
 	int Choice = 0;
@@ -20,28 +24,29 @@ public :
 		cout << "\n\n" << "\t\t\t1).Login " << endl;
 		cout << "\t\t\t2).Exit " << endl;
 		cout << "\n\n\t\t\t=========================" << endl;
-		//cin >> Choice;
-		//switch(Choice)
-		//{
-		//case 1: 
-		//	
-		//	Privilege = login_Menu_Back();  // This is used to check for admin or user privileges
-		//	//cout << "You are in!" << endl;
-		//	main_Menu(Privilege);
+		cin >> Choice;
+		switch(Choice)
+		{
+		case 1: 
+			
+			Privilege = login_Menu_Back();  // This is used to check for admin or user privileges
+			//cout << "You are in!" << endl;
+			main_Menu(Privilege);
 
-		//	break;
+			break;
 
-		//case 2:
-		//	cout << "Exiting....." << endl;
-		//	exit(0);
-		//	break;
+		case 2:
+			cout << "Exiting....." << endl;
+			exit(0);
+			break;
 
-		//default : 
-		//	system("cls");
-		//	cout << "Please choose between the choices give" << endl;
-		//	login_Menu();
-		//	break;
-		//}
+		default : 
+			system("cls");
+			cout << "Please choose between the choices given" << endl;
+			system("pause");
+			login_Menu();
+			break;
+		}
 
 	}
 
@@ -51,15 +56,18 @@ public :
 		if (Privilege == 2)
 		{
 			cout << "This is a classifier privileged account " << endl;
-			main_Menu_Admin();
+			system("pause");
+			main_Menu_Classifier();
 		}
 		else if (Privilege == 1)
 		{
+			system("pause");
 			cout << "This is a basic User account" << endl;
+			main_Menu_Basic();
 		}
 	}
 
-	void main_Menu_Admin()
+	void main_Menu_Classifier()
 	{
 		system("cls");
 		cout << "\t\t\t==========Classifier Account==========" << endl;
@@ -68,7 +76,7 @@ public :
 		cout << "\t\t\t 3).Modify Profile" << endl;
 		cout << "\t\t\t 4).Sign Out and Exit" << endl;
 		cout << "\n\n\t\t\t======================================" << endl;
-		/*cin >> Choice;
+		cin >> Choice;
 
 		switch (Choice)
 		{
@@ -85,73 +93,75 @@ public :
 			break;
 
 		case 4 : 
-			
+
+			remove("Login\\temp.dat");
+
 			break;
-		}*/
+
+		default :
+			main_Menu_Classifier();
+			break;
+
+		}
 
 	}
 
 	void menu_User_Manager()
 	{
 		system("cls");
-		cout << "\t\t\t==========User Management==========" << endl;
+		cout << "\t\t=========================User Management=========================" << endl;
 		cout << "\n\n\t\t\t 1).View Users" << endl;
 		cout << "\t\t\t 2).Add Users" << endl;
 		cout << "\t\t\t 3).Update Users" << endl;
 		cout << "\t\t\t 4).Search User" << endl;
 		cout << "\t\t\t 5).Delete User" << endl;
 		cout << "\t\t\t 6).Go back " << endl;
-		cout << "\n\n\t\t\t===================================" << endl;
-		/*cin >> Choice;
+		cout << "\n\n\t\t=================================================================" << endl;
+		cin >> Choice;
 
 		switch (Choice)
 		{
 		case 1:
 			
-			viewVector();
-			system("pause");
+			Display_Classifier();
+
 			menu_User_Manager();
 			break;
 
 		case 2: 
-			addVector();
-			system("pause");
+
+			Add_Classifier();
+			
 			menu_User_Manager();
 			break;
 
 		case 3:
-			viewVector();
-			cout << "Enter username to update : " << endl;
-			cin >> username;
-			updateUser(username);
-			system("pause");
+			
+			Update_Classifier();
+
 			menu_User_Manager();
 			break;
 
 		case 4: 
-			system("cls");
-			cout << "Please enter a username to search : " << endl;
-			cin >> username;
-			searchUser(username);
-			system("pause");
+			
+			Search_Classifier();
+
 			menu_User_Manager();
 			break;
 			
 		case 5:
-			viewVector();
-			cout << "Enter username to delete : " << endl;
-			cin >> username;
-			deleteUser(username);
-			system("pause");
+			
+			Delete_Clasifier();
+
 			menu_User_Manager();
 			break;
 
 		case 6 :
 
-			main_Menu_Admin();
+			main_Menu_Classifier();
 			break;
 
-		}*/
+		}
 
 		
 	}
@@ -159,48 +169,91 @@ public :
 	void menu_Planets_Manager()
 	{
 		system("cls");
-		cout << "\t\t\t==========Planets Management==========" << endl;
+		cout << "\t\t=========================Planets Management=========================" << endl;
 		cout << "\n\n\t\t\t 1).View Planets" << endl;
 		cout << "\t\t\t 2).Add Planets" << endl;
 		cout << "\t\t\t 3).Update Planet" << endl;
 		cout << "\t\t\t 4).Search Planet" << endl;
 		cout << "\t\t\t 5).Delete Planet" << endl;
 		cout << "\t\t\t 6).Go back " << endl;
-		cout << "\n\n\t\t\t===================================" << endl;
-		/*cin >> Choice;
+		cout << "\n\n\t\t=================================================================" << endl;
+		cin >> Choice;
 
 		switch (Choice)
 		{
 		case 1:
-			viewPlanets();
-			system("pause");
+			Display_planet();
+
 			menu_Planets_Manager();
 			break;
 		case 2:
 			AddPlanet();
-			system("pause");
+
 			menu_Planets_Manager();
 			break;
 		case 3:
-			viewPlanets();
-			cout << "Please Enter a Planet's Name to update: " << endl;
-			cin >> name;
-			updatePlanet(name);
-			system("pause");
+			Update_Planet();
+
 			menu_Planets_Manager();
 			break;
 		case 4:
+			Search_Planet();
+
+			menu_Planets_Manager();
 			break;
 		case 5:
+			Delete_Planet();
+
+			menu_Planets_Manager();
 			break;
 		case 6:
-			main_Menu_Admin();
+			main_Menu_Classifier();
 			break;
-		}*/
+
+		default:
+			menu_Planets_Manager();
+			break;
+		}
+
 	}
+	void main_Menu_Basic()
+	{
+		system("cls");
+		cout << "\t\t\t==========Navigator Account==========" << endl;
+		cout << "\n\n\t\t\t 1).View Users" << endl;
+		cout << "\t\t\t 2).View Planets" << endl;
+		cout << "\t\t\t 3).Modify Profile" << endl;
+		cout << "\t\t\t 4).Sign Out and Exit" << endl;
+		cout << "\n\n\t\t\t======================================" << endl;
+		cin >> Choice;
+
+		switch (Choice)
+		{
+		case 1: 
+			viewUser_basic();
+
+			main_Menu_Basic();
+			break;
+
+		case 2:
+			displayPlanets();
+
+			main_Menu_Basic();
+			break;
+
+		case 3:
+			
+			Modify_Profile();
+
+			main_Menu_Basic();
+			break;
+
+		case 4:
+
+			break;
+		}
 
 
-
-
+	}
 
 };

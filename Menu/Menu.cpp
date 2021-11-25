@@ -108,19 +108,19 @@ public :
 		{
 		case 1:
 			
-			viewVector();
+			viewUser();
 			system("pause");
 			menu_User_Manager();
 			break;
 
 		case 2: 
-			addVector();
+			addUser();
 			system("pause");
 			menu_User_Manager();
 			break;
 
 		case 3:
-			viewVector();
+			viewUser();
 			cout << "Enter username to update : " << endl;
 			cin >> username;
 			updateUser(username);
@@ -138,7 +138,7 @@ public :
 			break;
 			
 		case 5:
-			viewVector();
+			viewUser();
 			cout << "Enter username to delete : " << endl;
 			cin >> username;
 			deleteUser(username);

@@ -1,8 +1,8 @@
 #include <iostream>
-#include "Galaxies.cpp"
-#include "User_Auth.cpp"
+#include "../Planet_observance_3/Galaxies/Galaxies.cpp"
+#include "../Planet_observance_3/Login/User_Auth.cpp"
 #include <vector>
-#include "Planets.cpp"
+#include "../Planet_observance_3/Planets_All/Planets.cpp"
 #include "Menu/Menu.cpp"
 using namespace std;
 

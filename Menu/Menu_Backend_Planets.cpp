@@ -1,9 +1,9 @@
 #pragma once
 #include <iostream>
 #include <vector>
-#include "../Planet_observance_3/Planets_All/Planets.cpp"
-#include "../Planet_observance_3/Stations/Stations.cpp"
-#include "../Planet_observance_3/File_Utility/FileUtility.cpp"
+#include "Planets.cpp"
+#include "Stations.cpp"
+#include "FileUtility.cpp"
 #include <fstream>
 
 
